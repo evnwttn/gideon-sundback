@@ -2,17 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-class Dom extends React.Component {
+class Game extends React.Component {
   render() {
-    const stateArray = returnState();
+    let stateArray = returnState();
 
-    return <button onClick={() => console.log(stateArray)}>Log States</button>;
+    return (
+      <div className="game">
+        <button onClick={() => console.log(stateArray)}>Log States</button>;
+      </div>
+    );
   }
 }
 
 // ========================================
 
-ReactDOM.render(<Dom />, document.getElementById("root"));
+ReactDOM.render(<Game />, document.getElementById("root"));
 
 function returnState() {
   const states = [
@@ -67,5 +71,8 @@ function returnState() {
     ["Wisconson", "Madison"],
     ["Wyoming", "Cheyenne"],
   ];
-  return states;
+
+  let randomState = states[Math.floor(Math.random() * states.length)];
+
+  return randomState;
 }
