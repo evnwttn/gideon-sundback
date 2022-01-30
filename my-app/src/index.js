@@ -3,13 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 class Dom extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const stateArray = returnState();
 
-    return <button onClick={() => console.log(stateArray)}>Yeah</button>;
+    return <button onClick={() => console.log(stateArray)}>Log States</button>;
   }
 }
 
