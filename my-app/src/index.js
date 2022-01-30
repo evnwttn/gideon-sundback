@@ -7,7 +7,9 @@ class Dom extends React.Component {
     super(props);
   }
   render() {
-    return null;
+    const stateArray = returnState();
+
+    return <button onClick={() => console.log(stateArray)}>Yeah</button>;
   }
 }
 
@@ -15,7 +17,7 @@ class Dom extends React.Component {
 
 ReactDOM.render(<Dom />, document.getElementById("root"));
 
-function returnState(x) {
+function returnState() {
   const states = [
     ["Alabama", "Montgomery"],
     ["Alaska", "Juneau"],
