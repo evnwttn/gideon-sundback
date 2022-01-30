@@ -8,7 +8,8 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-        <button onClick={() => console.log(stateArray)}>Log States</button>;
+        What is the capital city of {stateArray[0]}?<br />
+        <button onClick={() => console.log(stateArray[1])}>Capital</button>
       </div>
     );
   }
