@@ -65,9 +65,7 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        <button onClick={() => console.log(this.randomState)}>
-          Random State
-        </button>
+        <button onClick={() => console.log(this.randomState)}>Capital</button>
       </div>
     );
   }
