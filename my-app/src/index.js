@@ -64,14 +64,15 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        {/* <button onClick={() => console.log("yeah")}>
-          {this.rightState[1]}
-        </button> */}
-        {this.states.map((state) => (
-          <button key={state} onClick={() => console.log(state)}>
-            {state}
-          </button>
-        ))}
+        {this.states.map((state) => {
+          if (state[0] === "New York") {
+            return (
+              <button key={state} onClick={() => console.log(state)}>
+                {state}
+              </button>
+            );
+          }
+        })}
       </div>
     );
   }
