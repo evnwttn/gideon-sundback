@@ -61,15 +61,20 @@ class Game extends React.Component {
     this.rightState =
       this.states[Math.floor(Math.random() * this.states.length)];
 
-    this.wrongState =
+    this.testState =
       this.states[Math.floor(Math.random() * this.states.length)];
+    if (this.testState !== this.rightState) {
+      this.wrongState = this.testState;
+    }
 
-    this.wrongState2 =
+    this.testState2 =
       this.states[Math.floor(Math.random() * this.states.length)];
+    if (this.testState2 !== this.rightState || this.testState) {
+      this.wrongState2 = this.testState2;
+    }
   }
 
   render() {
-    console.log(this.wrongState);
     return (
       <div className="game">
         <h1>What is the capital of {this.rightState[0]}?</h1>
