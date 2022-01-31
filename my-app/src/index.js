@@ -58,14 +58,26 @@ class Game extends React.Component {
       ["Wyoming", "Cheyenne"],
     ];
 
-    this.randomState =
+    this.rightState =
+      this.states[Math.floor(Math.random() * this.states.length)];
+
+    this.wrongState =
+      this.states[Math.floor(Math.random() * this.states.length)];
+
+    this.wrongState2 =
       this.states[Math.floor(Math.random() * this.states.length)];
   }
 
   render() {
+    console.log(this.wrongState);
     return (
       <div className="game">
-        <button onClick={() => console.log(this.randomState)}>Capital</button>
+        <h1>What is the capital of {this.rightState[0]}?</h1>
+        <button onClick={() => console.log("yeah")}>
+          {this.rightState[1]}
+        </button>
+        <button onClick={() => console.log("no")}>{this.wrongState[1]}</button>
+        <button onClick={() => console.log("no")}>{this.wrongState2[1]}</button>
       </div>
     );
   }
