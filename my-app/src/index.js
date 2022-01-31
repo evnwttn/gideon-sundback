@@ -70,6 +70,11 @@ class Game extends React.Component {
     // SOLUTION
 
     this.int = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+    console.log(this.int);
+  }
+
+  onButton(event) {
+    console.log(event);
   }
 
   render() {
@@ -79,19 +84,19 @@ class Game extends React.Component {
         {this.states.map((state) => {
           if (state === this.states[this.arr[0]]) {
             return (
-              <button key={state} onClick={() => console.log(state[0])}>
+              <button key={state} onClick={() => this.onButton(state)}>
                 {state[1]}
               </button>
             );
           } else if (state === this.states[this.arr[1]]) {
             return (
-              <button key={state} onClick={() => console.log(state[0])}>
+              <button key={state} onClick={() => this.onButton(state)}>
                 {state[1]}
               </button>
             );
           } else if (state === this.states[this.arr[2]]) {
             return (
-              <button key={state} onClick={() => console.log(state[0])}>
+              <button key={state} onClick={() => this.onButton(state)}>
                 {state[1]}
               </button>
             );
