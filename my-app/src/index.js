@@ -57,18 +57,16 @@ class Game extends React.Component {
       ["Wisconson", "Madison"],
       ["Wyoming", "Cheyenne"],
     ];
-
-    // this.states[Math.floor(Math.random() * this.states.length)];
   }
 
   render() {
     return (
       <div className="game">
         {this.states.map((state) => {
-          if (state[0] === "New York") {
+          if (state === this.stateOne) {
             return (
-              <button key={state} onClick={() => console.log(state)}>
-                {state}
+              <button key={state} onClick={() => console.log(state[1])}>
+                {state[0]}
               </button>
             );
           }
@@ -79,9 +77,5 @@ class Game extends React.Component {
 }
 
 // FUNCTIONS
-
-function masterThing() {
-  console.log(this.states);
-}
 
 ReactDOM.render(<Game />, document.getElementById("root"));
