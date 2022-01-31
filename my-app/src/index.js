@@ -73,7 +73,19 @@ class Game extends React.Component {
     return (
       <div className="game">
         {this.states.map((state) => {
-          if (state === this.states[this.arr[1]]) {
+          if (state === this.states[this.arr[0]]) {
+            return (
+              <button key={state} onClick={() => console.log(state[1])}>
+                {state[0]}
+              </button>
+            );
+          } else if (state === this.states[this.arr[1]]) {
+            return (
+              <button key={state} onClick={() => console.log(state[1])}>
+                {state[0]}
+              </button>
+            );
+          } else if (state === this.states[this.arr[2]]) {
             return (
               <button key={state} onClick={() => console.log(state[1])}>
                 {state[0]}
