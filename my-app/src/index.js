@@ -59,36 +59,40 @@ class Game extends React.Component {
       ["Wyoming", "Cheyenne"],
     ];
 
-    // RANDOMIZAH
+    // RANDOM STATES
 
     this.arr = [];
     while (this.arr.length < 3) {
       this.r = Math.floor(Math.random() * this.states.length) + 1;
       if (this.arr.indexOf(this.r) === -1) this.arr.push(this.r);
     }
-    console.log(this.arr);
+
+    // SOLUTION
+
+    this.int = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
   }
 
   render() {
     return (
       <div className="game">
+        What is the capital of {this.states[this.arr[this.int]][0]}?
         {this.states.map((state) => {
           if (state === this.states[this.arr[0]]) {
             return (
-              <button key={state} onClick={() => console.log(state[1])}>
-                {state[0]}
+              <button key={state} onClick={() => console.log(state[0])}>
+                {state[1]}
               </button>
             );
           } else if (state === this.states[this.arr[1]]) {
             return (
-              <button key={state} onClick={() => console.log(state[1])}>
-                {state[0]}
+              <button key={state} onClick={() => console.log(state[0])}>
+                {state[1]}
               </button>
             );
           } else if (state === this.states[this.arr[2]]) {
             return (
-              <button key={state} onClick={() => console.log(state[1])}>
-                {state[0]}
+              <button key={state} onClick={() => console.log(state[0])}>
+                {state[1]}
               </button>
             );
           }
