@@ -38,7 +38,7 @@ class Game extends React.Component {
       ["New Jersey", "Trenton"],
       ["New Mexico", "Santa Fe"],
       ["New York", "Albany"],
-      ["North Carolina", "raleigh"],
+      ["North Carolina", "Raleigh"],
       ["North Dakota", "Bismarck"],
       ["Ohio", "Columbus"],
       ["Oklahoma", "Oklahoma"],
@@ -58,36 +58,29 @@ class Game extends React.Component {
       ["Wyoming", "Cheyenne"],
     ];
 
-    this.rightState =
-      this.states[Math.floor(Math.random() * this.states.length)];
-
-    this.testState =
-      this.states[Math.floor(Math.random() * this.states.length)];
-    if (this.testState !== this.rightState) {
-      this.wrongState = this.testState;
-    }
-
-    this.testState2 =
-      this.states[Math.floor(Math.random() * this.states.length)];
-    if (this.testState2 !== this.rightState || this.testState) {
-      this.wrongState2 = this.testState2;
-    }
+    // this.states[Math.floor(Math.random() * this.states.length)];
   }
 
   render() {
     return (
       <div className="game">
-        <h1>What is the capital of {this.rightState[0]}?</h1>
-        <button onClick={() => console.log("yeah")}>
+        {/* <button onClick={() => console.log("yeah")}>
           {this.rightState[1]}
-        </button>
-        <button onClick={() => console.log("no")}>{this.wrongState[1]}</button>
-        <button onClick={() => console.log("no")}>{this.wrongState2[1]}</button>
+        </button> */}
+        {this.states.map((state) => (
+          <button key={state} onClick={() => console.log(state)}>
+            {state}
+          </button>
+        ))}
       </div>
     );
   }
 }
 
 // FUNCTIONS
+
+function masterThing() {
+  console.log(this.states);
+}
 
 ReactDOM.render(<Game />, document.getElementById("root"));
