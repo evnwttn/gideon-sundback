@@ -70,11 +70,15 @@ class Game extends React.Component {
     // SOLUTION
 
     this.int = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
-    console.log(this.int);
+    this.solution = this.states[this.arr[this.int]];
   }
 
   onButton(event) {
-    console.log(event);
+    if (event === this.solution) {
+      console.log("you got it");
+    } else {
+      console.log("you dun got it");
+    }
   }
 
   render() {
