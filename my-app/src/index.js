@@ -84,7 +84,9 @@ class Game extends React.Component {
   render() {
     return (
       <div className="game">
-        What is the capital of {this.states[this.arr[this.int]][0]}?
+        <h1>What is the capital of {this.solution[0]}?</h1>
+        <br />
+        <br />
         {this.states.map((state) => {
           if (state === this.states[this.arr[0]]) {
             return (

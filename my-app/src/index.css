@@ -1,9 +1,17 @@
-body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+@import "https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap";
+
+html {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.dom {
-  display: flex;
-  flex-direction: row;
+.game {
+  position: absolute;
+  font-family: "Heebo", sans-serif;
+  font-size: 100%;
+  margin-left: 15%;
+  margin-top: 10%;
+  color: pink;
 }
