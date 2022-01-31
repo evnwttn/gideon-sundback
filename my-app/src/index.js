@@ -5,6 +5,7 @@ import "./index.css";
 class Game extends React.Component {
   constructor() {
     super();
+
     this.states = [
       ["Alabama", "Montgomery"],
       ["Alaska", "Juneau"],
@@ -57,13 +58,22 @@ class Game extends React.Component {
       ["Wisconson", "Madison"],
       ["Wyoming", "Cheyenne"],
     ];
+
+    // RANDOMIZAH
+
+    this.arr = [];
+    while (this.arr.length < 3) {
+      this.r = Math.floor(Math.random() * this.states.length) + 1;
+      if (this.arr.indexOf(this.r) === -1) this.arr.push(this.r);
+    }
+    console.log(this.arr);
   }
 
   render() {
     return (
       <div className="game">
         {this.states.map((state) => {
-          if (state === this.stateOne) {
+          if (state === this.states[this.arr[1]]) {
             return (
               <button key={state} onClick={() => console.log(state[1])}>
                 {state[0]}
