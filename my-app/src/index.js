@@ -56,22 +56,18 @@ let states = [
 ];
 
 function ThrowStates() {
-  // RANDOM STATES
-
   let arr = [];
   let r;
 
   while (arr.length < 3) {
     r = Math.floor(Math.random() * states.length) + 0;
-    if (arr.indexOf(r) === -1) arr.push(r);
+    {
+      arr.indexOf(r) === -1 && arr.push(r);
+    }
   }
-
-  // RANDOM SOLUTION
 
   let i = Math.floor(Math.random() * arr.length) + 0;
   let sol = states[arr[i]];
-
-  // GAME
 
   return (
     <>
@@ -85,6 +81,12 @@ function ThrowStates() {
   );
 }
 
+function handleClick(elm, sol) {
+  {
+    elm === sol ? console.log("you win") : console.log("you lose");
+  }
+}
+
 export default function GideonSundback() {
   return (
     <>
@@ -93,16 +95,4 @@ export default function GideonSundback() {
   );
 }
 
-/////
-
 ReactDOM.render(GideonSundback(), document.getElementById("root"));
-
-/////
-
-function handleClick(elm, sol) {
-  if (elm === sol) {
-    console.log("you win!");
-  } else {
-    console.log("you lose!");
-  }
-}
