@@ -55,7 +55,7 @@ let states = [
   ["Wyoming", "Cheyenne"],
 ];
 
-function ThrowStates() {
+function AmericaBaby() {
   let arr = [];
   let r;
 
@@ -90,7 +90,7 @@ function handleClick(elm, sol) {
 export default function GideonSundback() {
   return (
     <>
-      <ThrowStates />
+      <AmericaBaby />
     </>
   );
 }
