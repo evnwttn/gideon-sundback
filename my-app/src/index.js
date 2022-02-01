@@ -89,9 +89,9 @@ function handleClick(elm, sol) {
 
 export default function GideonSundback() {
   return (
-    <>
+    <div className="game">
       <AmericaBaby />
-    </>
+    </div>
   );
 }
 
