@@ -38,7 +38,7 @@ let states = [
   ["North Carolina", "Raleigh"],
   ["North Dakota", "Bismarck"],
   ["Ohio", "Columbus"],
-  ["Oklahoma", "Oklahoma"],
+  ["Oklahoma", "Oklahoma City"],
   ["Oregon", "Salem"],
   ["Pennsylvania", "Harrisburg"],
   ["Rhode Island", "Providence"],
@@ -56,6 +56,8 @@ let states = [
 ];
 
 function ThrowStates() {
+  // RANDOM STATES
+
   let arr = [];
   let r;
 
@@ -64,15 +66,19 @@ function ThrowStates() {
     if (arr.indexOf(r) === -1) arr.push(r);
   }
 
+  // RANDOM SOLUTION
+
   let i = Math.floor(Math.random() * arr.length) + 0;
   let sol = states[arr[i]];
+
+  // GAME
 
   return (
     <>
       <h1>What is the capital of {sol[0]}?</h1>
       {arr.map((int) => (
         <button key={states[int]} onClick={() => handleClick(states[int], sol)}>
-          {states[int]}
+          {states[int][1]}
         </button>
       ))}
     </>
@@ -82,13 +88,16 @@ function ThrowStates() {
 export default function GideonSundback() {
   return (
     <>
-      Sometimes it do be like that.
       <ThrowStates />
     </>
   );
 }
 
+/////
+
 ReactDOM.render(GideonSundback(), document.getElementById("root"));
+
+/////
 
 function handleClick(elm, sol) {
   if (elm === sol) {
