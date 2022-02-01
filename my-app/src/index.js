@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { useState } from "react";
 
 let states = [
   ["Alabama", "Montgomery"],
@@ -65,7 +64,15 @@ function ThrowStates() {
     if (arr.indexOf(r) === -1) arr.push(r);
   }
 
-  return new Array([states[arr[0]]], [states[arr[1]]], [states[arr[2]]]);
+  return (
+    <>
+      {arr.map((state) => (
+        <button key={state} onClick={() => handleClick(state)}>
+          {state}
+        </button>
+      ))}
+    </>
+  );
 }
 
 export default function GideonSundback() {
@@ -78,3 +85,7 @@ export default function GideonSundback() {
 }
 
 ReactDOM.render(GideonSundback(), document.getElementById("root"));
+
+function handleClick(elm) {
+  console.log(elm);
+}
