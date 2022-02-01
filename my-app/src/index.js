@@ -60,15 +60,19 @@ function ThrowStates() {
   let r;
 
   while (arr.length < 3) {
-    r = Math.floor(Math.random() * states.length) + 1;
+    r = Math.floor(Math.random() * states.length) + 0;
     if (arr.indexOf(r) === -1) arr.push(r);
   }
 
+  let i = Math.floor(Math.random() * arr.length) + 0;
+  let sol = states[arr[i]];
+
   return (
     <>
-      {arr.map((state) => (
-        <button key={state} onClick={() => handleClick(state)}>
-          {state}
+      <h1>What is the capital of {sol[0]}?</h1>
+      {arr.map((int) => (
+        <button key={states[int]} onClick={() => handleClick(states[int], sol)}>
+          {states[int]}
         </button>
       ))}
     </>
@@ -86,6 +90,10 @@ export default function GideonSundback() {
 
 ReactDOM.render(GideonSundback(), document.getElementById("root"));
 
-function handleClick(elm) {
-  console.log(elm);
+function handleClick(elm, sol) {
+  if (elm === sol) {
+    console.log("you win!");
+  } else {
+    console.log("you lose!");
+  }
 }
