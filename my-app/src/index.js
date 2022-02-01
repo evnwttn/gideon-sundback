@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { useState } from "react";
 
 let states = [
   ["Alabama", "Montgomery"],
@@ -58,15 +59,13 @@ let states = [
 function ThrowStates() {
   let arr = [];
   let r;
+
   while (arr.length < 3) {
     r = Math.floor(Math.random() * states.length) + 1;
     if (arr.indexOf(r) === -1) arr.push(r);
   }
-  let stateArr = [states[arr[0]], states[arr[1]], states[arr[2]]];
 
-  console.log(stateArr);
-
-  return null;
+  return new Array([states[arr[0]]], [states[arr[1]]], [states[arr[2]]]);
 }
 
 export default function GideonSundback() {
