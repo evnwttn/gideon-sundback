@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import { useState } from "react";
 
 let states = [
   ["Alabama", "Montgomery"],
@@ -61,13 +62,15 @@ function AmericaBaby() {
 
   while (arr.length < 3) {
     r = Math.floor(Math.random() * states.length) + 0;
-    {
-      arr.indexOf(r) === -1 && arr.push(r);
-    }
+    arr.indexOf(r) === -1 && arr.push(r);
   }
 
   let i = Math.floor(Math.random() * arr.length) + 0;
   let sol = states[arr[i]];
+
+  function handleClick(elm, sol) {
+    elm === sol ? console.log("you win") : console.log("you lose");
+  }
 
   return (
     <>
@@ -79,12 +82,6 @@ function AmericaBaby() {
       ))}
     </>
   );
-}
-
-function handleClick(elm, sol) {
-  {
-    elm === sol ? console.log("you win") : console.log("you lose");
-  }
 }
 
 export default function GideonSundback() {
