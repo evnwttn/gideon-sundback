@@ -15,9 +15,21 @@ html {
 }
 
 .correct {
-  float: left;
-  width: 50%;
-  height: 50%;
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  z-index: -10;
+}
+
+.incorrect {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  z-index: -10;
+}
+
+.invisible {
+  display: none;
 }
 
 button {

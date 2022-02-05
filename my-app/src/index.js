@@ -75,15 +75,6 @@ function AmericaBaby() {
 
   function Correct() {
     setCount(score + 1);
-
-    // <div className="correct">
-    //   <img
-    //     src={require("./img/correct.gif").default}
-    //     height={209}
-    //     width={372}
-    //     alt={"correct"}
-    //   />
-    // </div>
   }
 
   function Incorrect() {
@@ -105,9 +96,27 @@ function AmericaBaby() {
 
 export default function GideonSundback() {
   return (
-    <div className="game">
-      <AmericaBaby />
-    </div>
+    <>
+      <div className="game">
+        <AmericaBaby />
+      </div>
+      {/* <div className="correct invisible">
+        <img
+          src={require("./img/correct.gif")}
+          height={209}
+          width={372}
+          alt={"correct"}
+        />
+      </div>
+      <div className="incorrect invisible">
+        <img
+          src={require("./img/incorrect.gif")}
+          height={209}
+          width={372}
+          alt={"correct"}
+        />
+      </div> */}
+    </>
   );
 }
 
