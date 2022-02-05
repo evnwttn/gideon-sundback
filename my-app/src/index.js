@@ -57,6 +57,7 @@ let states = [
 ];
 
 function AmericaBaby() {
+  const [count, setCount] = useState(0);
   let arr = [];
   let r;
 
@@ -69,7 +70,8 @@ function AmericaBaby() {
   let sol = states[arr[i]];
 
   function handleClick(elm, sol) {
-    elm === sol ? console.log("you win") : console.log("you lose");
+    elm === sol ? setCount(count + 1) : setCount(count - 1);
+    console.log(count);
   }
 
   return (
