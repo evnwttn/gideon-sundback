@@ -57,7 +57,7 @@ let states = [
 ];
 
 function AmericaBaby() {
-  const [count, setCount] = useState(0);
+  const [score, setCount] = useState(0);
   let arr = [];
   let r;
 
@@ -70,13 +70,14 @@ function AmericaBaby() {
   let sol = states[arr[i]];
 
   function handleClick(elm, sol) {
-    elm === sol ? setCount(count + 1) : setCount(count - 1);
-    console.log(count);
+    elm === sol ? setCount(score + 1) : setCount(score - 1);
+    console.log(score);
   }
 
   return (
     <>
       <h1>What is the capital of {sol[0]}?</h1>
+      <h2>Score: {score}</h2>
       {arr.map((int) => (
         <button key={states[int]} onClick={() => handleClick(states[int], sol)}>
           {states[int][1]}
