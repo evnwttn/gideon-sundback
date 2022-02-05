@@ -70,8 +70,24 @@ function AmericaBaby() {
   let sol = states[arr[i]];
 
   function handleClick(elm, sol) {
-    elm === sol ? setCount(score + 1) : setCount(score - 1);
-    console.log(score);
+    elm === sol ? Correct() : Incorrect();
+  }
+
+  function Correct() {
+    setCount(score + 1);
+
+    // <div className="correct">
+    //   <img
+    //     src={require("./img/correct.gif").default}
+    //     height={209}
+    //     width={372}
+    //     alt={"correct"}
+    //   />
+    // </div>
+  }
+
+  function Incorrect() {
+    setCount(score - 1);
   }
 
   return (
