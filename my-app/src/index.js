@@ -100,7 +100,7 @@ export default function GideonSundback() {
       <div className="game">
         <AmericaBaby />
       </div>
-      {/* <div className="correct invisible">
+      <div className="correct invisible">
         <img
           src={require("./img/correct.gif")}
           height={209}
@@ -115,7 +115,7 @@ export default function GideonSundback() {
           width={372}
           alt={"correct"}
         />
-      </div> */}
+      </div>
     </>
   );
 }
