@@ -60,15 +60,14 @@ function AmericaBaby() {
   const [score, setCount] = useState(0);
   let randomStates = [];
   let randomNum;
+  let randomNum2 = Math.floor(Math.random() * randomStates.length) + 0;
 
   while (randomStates.length < 3) {
     randomNum = Math.floor(Math.random() * states.length) + 0;
     randomStates.indexOf(randomNum) === -1 && randomStates.push(randomNum);
   }
 
-  let randomNum2 = Math.floor(Math.random() * randomStates.length) + 0;
   let correctState = states[randomStates[randomNum2]];
-
   let handleClick = (elm, correctState) => {
     elm === correctState ? Correct() : Incorrect();
   };
