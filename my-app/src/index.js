@@ -56,7 +56,7 @@ let states = [
   ["Wyoming", "Cheyenne"],
 ];
 
-function AmericaBaby() {
+function Game() {
   const [score, setCount] = useState(0);
   let randomStates = [];
   let randomNum;
@@ -98,27 +98,9 @@ function AmericaBaby() {
 
 export default function GideonSundback() {
   return (
-    <>
-      <div className="game">
-        <AmericaBaby />
-      </div>
-      <div className="correct invisible">
-        <img
-          src={require("./img/correct.gif")}
-          height={209}
-          width={372}
-          alt={"correct"}
-        />
-      </div>
-      <div className="incorrect invisible">
-        <img
-          src={require("./img/incorrect.gif")}
-          height={209}
-          width={372}
-          alt={"correct"}
-        />
-      </div>
-    </>
+    <div className="game">
+      <Game />
+    </div>
   );
 }
 
