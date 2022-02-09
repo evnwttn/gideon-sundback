@@ -58,19 +58,19 @@ let states = [
 
 function AmericaBaby() {
   const [score, setCount] = useState(0);
-  let arr = [];
-  let r;
+  let randomStates = [];
+  let randomNum;
 
-  while (arr.length < 3) {
-    r = Math.floor(Math.random() * states.length) + 0;
-    arr.indexOf(r) === -1 && arr.push(r);
+  while (randomStates.length < 3) {
+    randomNum = Math.floor(Math.random() * states.length) + 0;
+    randomStates.indexOf(randomNum) === -1 && randomStates.push(randomNum);
   }
 
-  let i = Math.floor(Math.random() * arr.length) + 0;
-  let sol = states[arr[i]];
+  let randomNum2 = Math.floor(Math.random() * randomStates.length) + 0;
+  let correctState = states[randomStates[randomNum2]];
 
-  function handleClick(elm, sol) {
-    elm === sol ? Correct() : Incorrect();
+  function handleClick(elm, correctState) {
+    elm === correctState ? Correct() : Incorrect();
   }
 
   function Correct() {
@@ -83,10 +83,13 @@ function AmericaBaby() {
 
   return (
     <>
-      <h1>What is the capital of {sol[0]}?</h1>
+      <h1>What is the capital of {correctState[0]}?</h1>
       <h2>Score: {score}</h2>
-      {arr.map((int) => (
-        <button key={states[int]} onClick={() => handleClick(states[int], sol)}>
+      {randomStates.map((int) => (
+        <button
+          key={states[int]}
+          onClick={() => handleClick(states[int], correctState)}
+        >
           {states[int][1]}
         </button>
       ))}
