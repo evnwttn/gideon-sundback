@@ -69,17 +69,17 @@ function AmericaBaby() {
   let randomNum2 = Math.floor(Math.random() * randomStates.length) + 0;
   let correctState = states[randomStates[randomNum2]];
 
-  function handleClick(elm, correctState) {
+  let handleClick = (elm, correctState) => {
     elm === correctState ? Correct() : Incorrect();
-  }
+  };
 
-  function Correct() {
+  let Correct = () => {
     setCount(score + 1);
-  }
+  };
 
-  function Incorrect() {
+  let Incorrect = () => {
     setCount(score - 1);
-  }
+  };
 
   return (
     <>
